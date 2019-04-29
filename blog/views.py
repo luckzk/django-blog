@@ -6,7 +6,7 @@ from django.db.models import Q
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView
 from django.utils.text import slugify
-
+from django.http import HttpResponse
 from comments.forms import CommentForm
 from .models import Post, Category, Tag
 
@@ -15,7 +15,8 @@ from .models import Post, Category, Tag
 def index(request):
     return HttpResponse("欢迎访问我的博客首页！")
 """
-
+def about(request):
+    return render(request, 'blog/about.html')
 """
 请使用下方真正的首页视图函数
 def index(request):
